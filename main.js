@@ -14,12 +14,17 @@ $(function() {
 
         /* インデントが一つズレてるよ */
 
-        var queryArray = ['弱いひよこ', 'ひよこのボス', 'いぬ', 'ねこ', '組長']; // セミコロンが抜けてるよ
-        var resultArray = ['hiyoko_chibi', 'hiyoko_boss', 'dog', 'cat', 'boss']; // セミコロンが抜けてるよ
+        var queryObj = {'弱いひよこ': 'hiyoko_chibi', 
+        				'ひよこのボス': 'hiyoko_boss', 
+        				'いぬ': 'dog',
+        				'ねこ': 'cat',
+        				'組長': 'boss'
+        				}; // セミコロンが抜けてるよ
 
-        for (var i = 0; i < queryArray.length; i++) {
-            if (query == queryArray[i]) {
-                $('#result').html('<img src="' + resultArray[i] + '.png">'); // ＋の前後にはスペースを開けよう, あとインデントがズレてるよ！
+        for (var key in queryObj) {
+        	var data = queryObj[key] 
+            if (query == key) {
+                $('#result').html('<img src="' + data + '.png">'); // ＋の前後にはスペースを開けよう, あとインデントがズレてるよ！
             }
         }
     });
